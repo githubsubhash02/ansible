@@ -26,9 +26,9 @@ ansible-playbook -i inventory/ec2.ini playbooks/playbook.yml
 # with this entire configuration, the dynamic inventroy would look something like below:
 
 [tag_Name_webserver]
-<instance-public-ip-1>
-<instance-public-ip-2>
+instance-public-ip-1
+instance-public-ip-2
 
 [tag_Name_db]
-<instance-public-ip-3>
+instance-public-ip-3
 
