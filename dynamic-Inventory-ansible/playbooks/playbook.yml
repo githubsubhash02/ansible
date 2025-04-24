@@ -1,0 +1,11 @@
+- name: Check uptime on EC2 instances
+  hosts: tag_Name__test
+  remote_user: ec2-user
+  tasks:
+    - name: Run uptime command
+      shell: uptime
+      register: result
+
+    - name: Show uptime
+      debug:
+        var: result.stdout
