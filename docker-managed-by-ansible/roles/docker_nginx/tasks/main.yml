@@ -1,0 +1,32 @@
+
+- name: Pull NGINX Docker image
+  community.docker.docker_image:
+    name: nginx
+    source: pull
+
+  tags: pull
+
+- name: Start NGINX container
+  community.docker.docker_container:
+    name: nginx_server
+    image: nginx
+    state: started
+    restart_policy: always
+    published_ports:
+      - "8080:80"
+
+  tags: start
+
+- name: Stop NGINX container
+  community.docker.docker_container:
+    name: nginx_server
+    state: stopped
+
+  tags: stop
+
+- name: Remove NGINX container
+  community.docker.docker_container:
+    name: nginx_server
+    state: absent
+
+  tags: remove

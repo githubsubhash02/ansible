@@ -1,0 +1,6 @@
+- name: Manage Docker with Ansible-NGINX
+  hosts: web
+  become: true
+  roles:
+    - docker_nginx
+
